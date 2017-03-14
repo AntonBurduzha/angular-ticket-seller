@@ -1,0 +1,23 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jquery": true
+  },
+  "extends": ["angular"],
+  "rules": {
+    "angular/no-service-method": 0,
+    "no-console": 0
+  },
+  "globals": {
+    "angular": true,
+    "module": true,
+    "require": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Welcome to Mutiplex Cinema</h1>
+            <h3>Films list</h3>
+            <ol>
+                <li ng-repeat="film in vm.filmsData">
+                    <a ng-click="vm.getCurrentFilm(film)" data-ng-bind="film"></a>
+                </li>
+            </ol>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 data-ng-bind="vm.filmName"></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non dapibus ante. In egestas malesuada tortor,
+                et pulvinar ante suscipit sed. Pellentesque sit amet purus ac velit bibendum viverra ac ac velit. Nam egestas
+                pulvinar ex non lobortis. Curabitur et est quis odio efficitur viverra et sit amet quam. Integer blandit blandit
+                tincidunt. Ut ut diam id ex feugiat sagittis at ac nulla. Nunc vel ante cursus, imperdiet arcu a, facilisis est.
+                Etiam commodo libero et tincidunt finibus. Phasellus a magna a turpis suscipit bibendum.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <table>
+                <tr ng-repeat="row in vm.cinemaHall">
+                    <td ng-repeat="placeNumber in row track by $index" class="table-data-films" data-ng-bind="placeNumber" ng-click="vm.setSelected($parent.$index, $index)">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-2" ng-show="vm.showingPlaceData">
+            <p>Row: {{vm.placeData.row}}</p>
+            <p>Place: {{vm.placeData.place}}</p>
+            <button>Buy ticket</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <ul>
+                        <li ng-repeat="item in $ctrl.items">
+                            <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                        </li>
+                    </ul>
+                    Selected: <b>{{ $ctrl.selected.item }}</b>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+                    <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+                </div>
+            </script>
+            <script type="text/ng-template" id="stackedModal.html">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
+                </div>
+                <div class="modal-body" id="modal-body-{{name}}">
+                    Having multiple modals open at once is probably bad UX but it's technically possible.
+                </div>
+            </script>
+
+            <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">Small modal</button>
+            <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
+            <div class="modal-parent">
+            </div>
+        </div>
+    </div>
+</div>
