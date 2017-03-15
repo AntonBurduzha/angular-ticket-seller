@@ -22,34 +22,7 @@
             <p>Row: {{vm.placeData.row}}</p>
             <p>Place: {{vm.placeData.place}}</p>
             <div ng-controller="ModalDemoController as vm" class="modal-demo">
-                <script type="text/ng-template" id="myModalContent.html">
-                    <div class="modal-header">
-                        <h3 class="modal-title">Do you wanna buy ticket?</h3>
-                    </div>
-                    <div class="modal-footer">
-
-                        <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
-                        <button class="btn btn-primary" type="button" ng-click="vm.cancel()">Cancel</button>
-                    </div>
-                </script>
                 <button ng-click="vm.open('sm')">Buy ticket</button>
-                <div class="modal-parent">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div ng-controller="ModalThanksDemoController as vm" class="modal-demo-thanks">
-            <script type="text/ng-template">
-                <div class="modal-header">
-                    <h3 class="modal-title">Thanks</h3>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
-                </div>
-            </script>
-            <div class="modal-parent">
             </div>
         </div>
     </div>
