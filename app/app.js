@@ -1,6 +1,8 @@
 import angular from 'angular'
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap'
+import ngAnimate from 'angular-animate'
+import ngSanitize from 'angular-sanitize'
 
 import '../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf'
 import '../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff'
@@ -16,9 +18,10 @@ import './components/film/film.module'
 import { routerConfig } from './app.router'
 
 angular.module('AngularTestApp', [
-    uiBootstrap,
-    uiRouter,
-    'app.home',
-    'app.film'
-  ])
-  .config(routerConfig);
+  ngAnimate,
+  ngSanitize,
+  uiBootstrap,
+  uiRouter,
+  'app.home',
+  'app.film'
+]).config(routerConfig);
